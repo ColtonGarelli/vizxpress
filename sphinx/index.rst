@@ -10,6 +10,8 @@ Welcome to VizXpress's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   VizXpress
+
 
 
 Indices and tables
