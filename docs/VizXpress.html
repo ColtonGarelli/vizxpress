@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VizXpress package &#8212; VizXpress 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="vizxpress-package">
+<h1>VizXpress package<a class="headerlink" href="#vizxpress-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-VizXpress.bar">
+<span id="vizxpress-bar-module"></span><h2>VizXpress.bar module<a class="headerlink" href="#module-VizXpress.bar" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="VizXpress.bar.format_bar">
+<code class="sig-prename descclassname">VizXpress.bar.</code><code class="sig-name descname">format_bar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bar</span></em>, <em class="sig-param"><span class="n">gene</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.bar.format_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="VizXpress.bar.read_count_bar">
+<code class="sig-prename descclassname">VizXpress.bar.</code><code class="sig-name descname">read_count_bar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">cols</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">gene</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.bar.read_count_bar" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>df: dataframe containing genes, samples, and corresponding counts for each coordinate</dt><dd><p>should be formatted with genes as index and samples as columns</p>
+</dd>
+</dl>
+<p>cols: a list of columns to include in the bar graph
+gene: the gene for which counts will be plotted</p>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-VizXpress.dendrogram">
+<span id="vizxpress-dendrogram-module"></span><h2>VizXpress.dendrogram module<a class="headerlink" href="#module-VizXpress.dendrogram" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="VizXpress.dendrogram.dendrogram">
+<code class="sig-prename descclassname">VizXpress.dendrogram.</code><code class="sig-name descname">dendrogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">groups</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.dendrogram.dendrogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>References: <a class="reference external" href="https://python-graph-gallery.com/401-customised-dendrogram/">https://python-graph-gallery.com/401-customised-dendrogram/</a>
+Args:</p>
+<blockquote>
+<div><p>df:</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-VizXpress.density">
+<span id="vizxpress-density-module"></span><h2>VizXpress.density module<a class="headerlink" href="#module-VizXpress.density" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="VizXpress.density.density_plot">
+<code class="sig-prename descclassname">VizXpress.density.</code><code class="sig-name descname">density_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">groups</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.density.density_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a density plot from a DataFrame</p>
+<p>Plot density of all samples in df. All columns should be of the same data (e.g. log2fc, read counts, p-values.
+Density plots can be used to determine presence of batch effects</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>df: a DataFrame containing sample data
+groups: a dictionary mapping each batch to a list of experiments</p>
+</dd>
+<dt>Returns:</dt><dd><p>A density plot</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="vizxpress-dott-plot-module">
+<h2>VizXpress.dott_plot module<a class="headerlink" href="#vizxpress-dott-plot-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-VizXpress.gsea">
+<span id="vizxpress-gsea-module"></span><h2>VizXpress.gsea module<a class="headerlink" href="#module-VizXpress.gsea" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="VizXpress.gsea.GSEAnalysis">
+<em class="property">class </em><code class="sig-prename descclassname">VizXpress.gsea.</code><code class="sig-name descname">GSEAnalysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_out_directory</span></em>, <em class="sig-param"><span class="n">extension</span><span class="o">=</span><span class="default_value">'/gsea'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.gsea.GSEAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="VizXpress.gsea.GSEAnalysis.construct_classes">
+<em class="property">classmethod </em><code class="sig-name descname">construct_classes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">disease_name</span></em>, <em class="sig-param"><span class="n">healthy_name</span></em>, <em class="sig-param"><span class="n">disease_num</span></em>, <em class="sig-param"><span class="n">healthy_num</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.gsea.GSEAnalysis.construct_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="VizXpress.gsea.GSEAnalysis.run_gsea">
+<code class="sig-name descname">run_gsea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ordered_df</span></em>, <em class="sig-param"><span class="n">classes</span></em>, <em class="sig-param"><span class="n">db</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">db_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">processes</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">no_plot</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'signal_to_noise'</span></em>, <em class="sig-param"><span class="n">permutation_type</span><span class="o">=</span><span class="default_value">'gene_set'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.gsea.GSEAnalysis.run_gsea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="VizXpress.gsea.GSEAnalysis.run_ssGSEA">
+<code class="sig-name descname">run_ssGSEA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ordered_df</span></em>, <em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'rank'</span></em>, <em class="sig-param"><span class="n">no_plot</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">processes</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.gsea.GSEAnalysis.run_ssGSEA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="vizxpress-heatmap-module">
+<h2>VizXpress.heatmap module<a class="headerlink" href="#vizxpress-heatmap-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="vizxpress-helpers-module">
+<h2>VizXpress.helpers module<a class="headerlink" href="#vizxpress-helpers-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="vizxpress-kmeans-module">
+<h2>VizXpress.kmeans module<a class="headerlink" href="#vizxpress-kmeans-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-VizXpress.misc">
+<span id="vizxpress-misc-module"></span><h2>VizXpress.misc module<a class="headerlink" href="#module-VizXpress.misc" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="VizXpress.misc.calc_stat_power">
+<code class="sig-prename descclassname">VizXpress.misc.</code><code class="sig-name descname">calc_stat_power</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">effect_size</span></em>, <em class="sig-param"><span class="n">cutoff</span><span class="o">=</span><span class="default_value">0.05</span></em>, <em class="sig-param"><span class="n">power</span><span class="o">=</span><span class="default_value">0.8</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.misc.calc_stat_power" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>effect_size:
+cutoff:
+power:</p>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-VizXpress.pca">
+<span id="vizxpress-pca-module"></span><h2>VizXpress.pca module<a class="headerlink" href="#module-VizXpress.pca" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="VizXpress.pca.calculate_principal_components">
+<code class="sig-prename descclassname">VizXpress.pca.</code><code class="sig-name descname">calculate_principal_components</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pca_df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.pca.calculate_principal_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>PCA on a DataFrame or on a list of DataFrames.</p>
+<blockquote>
+<div><p>Perform PCA on several datasets to determine extent of batch effects or to compare global differences between
+datasets. A DataFrame containing samples to compare or a list of DataFrames (usually to compare between samples for
+batch effect) is passed. Data is standardized using the sklearn.preprocessing.StandardScaler class. (n/2)-1 components
+are calculated from standardized data. DataFrames passed should be formatted with experiments as columns and genes
+as rows.
+“The fit learns some quantities from the data, most importantly the “components” and “explained variance””
+“This transformation from data axes to principal axes is an affine transformation, which basically means it is composed of a translation, rotation, and uniform scaling.”</p>
+</div></blockquote>
+<dl class="simple">
+<dt>References: <a class="reference external" href="https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60">https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60</a></dt><dd><p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html">https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html</a>
+<a class="reference external" href="http://www.marcottelab.org/users/BCH391L_2015/NBT_primer_PCA.pdf">http://www.marcottelab.org/users/BCH391L_2015/NBT_primer_PCA.pdf</a></p>
+</dd>
+<dt>Args:</dt><dd><p>pca_dfs: A DataFrame, or list of DataFrames containing gene expression data for PCA comparison.</p>
+</dd>
+</dl>
+<p>Returns: A DataFrame containing the first (n/2)-1 components</p>
+</dd></dl>
+
+</div>
+<div class="section" id="vizxpress-plot-pca-module">
+<h2>VizXpress.plot_pca module<a class="headerlink" href="#vizxpress-plot-pca-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-VizXpress.plotly">
+<span id="vizxpress-plotly-module"></span><h2>VizXpress.plotly module<a class="headerlink" href="#module-VizXpress.plotly" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-VizXpress.ridge_plot">
+<span id="vizxpress-ridge-plot-module"></span><h2>VizXpress.ridge_plot module<a class="headerlink" href="#module-VizXpress.ridge_plot" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-VizXpress.venn">
+<span id="vizxpress-venn-module"></span><h2>VizXpress.venn module<a class="headerlink" href="#module-VizXpress.venn" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="VizXpress.venn.make_venn">
+<code class="sig-prename descclassname">VizXpress.venn.</code><code class="sig-name descname">make_venn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df1</span></em>, <em class="sig-param"><span class="n">df2</span></em>, <em class="sig-param"><span class="n">df1_col</span></em>, <em class="sig-param"><span class="n">df2_col</span></em>, <em class="sig-param"><span class="n">pval</span></em>, <em class="sig-param"><span class="n">name1</span></em>, <em class="sig-param"><span class="n">name2</span></em>, <em class="sig-param"><span class="n">pval_cutoff</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="n">as_percent</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.venn.make_venn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-VizXpress.violin">
+<span id="vizxpress-violin-module"></span><h2>VizXpress.violin module<a class="headerlink" href="#module-VizXpress.violin" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="VizXpress.violin.violin_plot">
+<code class="sig-prename descclassname">VizXpress.violin.</code><code class="sig-name descname">violin_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">cols</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">genes</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#VizXpress.violin.violin_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a violin plot</p>
+<p>Makes a violin plot of all genes in df or genes defined by the parameter ‘genes’.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>df: DataFrame containing logFC and p-value. <strong>Must</strong> contain logfc and p-value data from one experiment
+genes: a list of genes
+cols:</p>
+</dd>
+<dt>Returns:</dt><dd><p>an instance of a violin plot</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="vizxpress-volcano-module">
+<h2>VizXpress.volcano module<a class="headerlink" href="#vizxpress-volcano-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-VizXpress">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-VizXpress" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">VizXpress</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Colton J. Garelli.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/VizXpress.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
