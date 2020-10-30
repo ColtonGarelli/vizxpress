@@ -4,4 +4,7 @@ vizxpress
 .. toctree::
    :maxdepth: 4
 
-   VizXpress
+    VizXpress
+    Python Resources
+    Documentation Resources
+
